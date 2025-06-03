@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a project on building the backend of youtube-like application",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
