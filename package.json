@@ -1,16 +1,18 @@
 {
-  "name": "yt_backend",
+  "name": "youtube_backend",
   "version": "1.0.0",
-  "description": "a project on building the backend of youtube-like application",
+  "description": "a project on youtube backend",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "javascript",
-    "backend"
+    "backend",
+    "node"
   ],
   "author": "Bidisha",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
