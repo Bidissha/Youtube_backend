@@ -34,13 +34,13 @@ const userSchema = new mongoose.Schema(
     },
     watchHistory: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "video",
+      ref: "Video",
     },
     password: {
       type: String,
       required: [true, "Password is required!"],
     },
-    refreshTable: {
+    refreshToken: {
       type: String,
     },
   },
@@ -61,7 +61,7 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 
 //jwt code
 userSchema.methods.generateAccessToken = function () {
-  jwt.sign(
+  return jwt.sign(
     {
       _id: this._id,
       email: this.email,
@@ -76,11 +76,11 @@ userSchema.methods.generateAccessToken = function () {
 };
 
 userSchema.methods.generateRefreshToken = function () {
-  jwt.sign(
+  return jwt.sign(
     {
       _id: this._id,
     },
-    process.env.ACCESS_REFRESH_SECRET,
+    process.env.REFRESH_TOKEN_SECRET,
     {
       expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
     }
